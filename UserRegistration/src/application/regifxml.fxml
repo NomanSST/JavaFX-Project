@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.regController">
+   <children>
+      <AnchorPane prefHeight="450.0" prefWidth="650.0">
+         <children>
+            <AnchorPane fx:id="loginForm" layoutX="325.0" prefHeight="500.0" prefWidth="350.0" styleClass="white-form" stylesheets="@../loginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="14.0" styleClass="head-label" stylesheets="@../loginDesign.css" text="Login Account" textFill="#079014">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="username" layoutX="50.0" layoutY="263.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <PasswordField fx:id="password" layoutX="50.0" layoutY="304.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Button fx:id="loginBtn" layoutX="50.0" layoutY="375.0" mnemonicParsing="false" onAction="#doLogin" prefHeight="40.0" prefWidth="250.0" styleClass="login-btn" stylesheets="@../loginDesign.css" text="Login" />
+                  <FontAwesomeIcon glyphName="USER" layoutX="123.0" layoutY="179.0" size="10em" />
+                  <ComboBox fx:id="loginUserSelection" layoutX="163.0" layoutY="225.0" prefHeight="27.0" prefWidth="136.0" promptText="Select user" />
+                  <Label layoutX="51.0" layoutY="228.0" text="Select User Type :">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="passViewImageBtn" fitHeight="25.0" fitWidth="25.0" layoutX="271.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="signupForm" prefHeight="500.0" prefWidth="350.0" styleClass="white-form" stylesheets="@../loginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="16.0" layoutY="14.0" styleClass="head-label" stylesheets="@../loginDesign.css" text="Register Account" textFill="#026b0b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sideUsername" layoutX="92.0" layoutY="319.0" prefHeight="30.0" prefWidth="213.0" promptText="Username" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <PasswordField fx:id="sidePassword" layoutX="92.0" layoutY="359.0" prefHeight="30.0" prefWidth="213.0" promptText="Password" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Button fx:id="signupBtn" layoutX="92.0" layoutY="396.0" mnemonicParsing="false" onAction="#doSignUp" prefHeight="40.0" prefWidth="213.0" styleClass="signup-btn" stylesheets="@../loginDesign.css" text="Sign Up" textFill="#045b75" />
+                  <TextField fx:id="fullName" layoutX="92.0" layoutY="93.0" prefHeight="30.0" prefWidth="213.0" promptText="Name" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label layoutX="42.0" layoutY="99.0" text="Name :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userDept" layoutX="92.0" layoutY="130.0" prefHeight="30.0" prefWidth="213.0" promptText="Department" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label layoutX="48.0" layoutY="136.0" text="Dept :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userSession" layoutX="92.0" layoutY="168.0" prefHeight="30.0" prefWidth="213.0" promptText="Session" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label fx:id="sessionLabel" layoutX="33.0" layoutY="174.0" text="Session :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userID" layoutX="92.0" layoutY="207.0" prefHeight="30.0" prefWidth="213.0" promptText="University ID" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label layoutX="60.0" layoutY="213.0" text=" ID :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="325.0" text="Username :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="365.0" text=" Password :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="59.0" prefHeight="21.0" prefWidth="129.0" text="Select User Type : ">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="userSelection" layoutX="162.0" layoutY="56.0" prefHeight="27.0" prefWidth="143.0" promptText="Which one? " />
+                  <TextField fx:id="userEmail" layoutX="92.0" layoutY="279.0" prefHeight="30.0" prefWidth="213.0" promptText="Email Address" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label layoutX="45.0" layoutY="285.0" text="Email :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userPhn" layoutX="92.0" layoutY="243.0" prefHeight="30.0" prefWidth="213.0" promptText="Phone No" styleClass="textfield" stylesheets="@../loginDesign.css" />
+                  <Label layoutX="25.0" layoutY="249.0" text="Phone no:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="sideCover" prefHeight="500.0" prefWidth="350.0" styleClass="gradient" stylesheets="@../loginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="85.0" layoutY="322.0" text="Create Account" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_createBtn" layoutX="48.0" layoutY="362.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="220.0" styleClass="create-btn" stylesheets="@../loginDesign.css" text="Create New Account">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <FontAwesomeIcon fill="#3df9ff" glyphName="GROUP" layoutX="86.0" layoutY="141.0" selectionFill="#e81212" size="10em" text="" />
+                  <Label layoutX="30.0" layoutY="197.0" text="LabAssist : Lab Management System" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_alreadyBtn" layoutX="48.0" layoutY="362.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchForm" prefHeight="40.0" prefWidth="220.0" styleClass="create-btn" stylesheets="@../loginDesign.css" text="Already have an Account?" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

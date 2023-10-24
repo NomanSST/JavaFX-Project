@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../homeDesign.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <AnchorPane fx:id="headerLabel" prefHeight="37.0" prefWidth="1000.0" styleClass="header" stylesheets="@../homeDesign.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="headerText" layoutX="364.0" layoutY="4.0" text="LabAssist : Lab Management System" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="38.0" prefHeight="562.0" prefWidth="171.0" styleClass="btn-section" stylesheets="@../homeDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="829.0" AnchorPane.topAnchor="38.0">
+               <children>
+                  <AnchorPane prefHeight="55.0" prefWidth="170.0" styleClass="displayName" stylesheets="@../homeDesign.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="displayName" layoutX="6.0" layoutY="28.0" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="5.0" text="Logged in as:" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="logOutBtn" layoutX="55.0" layoutY="505.0" mnemonicParsing="false" onAction="#doLogOut" styleClass="logout" stylesheets="@../homeDesign.css" text="Log out" />
+                  <Button fx:id="searchQueryBtn" layoutX="18.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchUserAccess" prefHeight="32.0" prefWidth="126.0" styleClass="user-btn" text="Search" />
+                  <Button fx:id="itemsViewBtn" layoutX="18.0" layoutY="72.0" mnemonicParsing="false" onAction="#switchUserAccess" prefHeight="32.0" prefWidth="126.0" styleClass="user-btn" text="Items" />
+                  <Button fx:id="inventoryViewBtn" layoutX="18.0" layoutY="200.0" mnemonicParsing="false" onAction="#switchUserAccess" prefHeight="32.0" prefWidth="126.0" styleClass="user-btn" text="Inventory" />
+                  <Button fx:id="requestResultBtn" layoutX="18.0" layoutY="116.0" mnemonicParsing="false" onAction="#switchUserAccess" prefHeight="32.0" prefWidth="126.0" styleClass="user-btn" text="Requests" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="inventory_form" layoutX="442.0" layoutY="172.0" prefHeight="200.0" prefWidth="200.0" styleClass="white-bg" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="44.0">
+               <children>
+                  <TableView fx:id="inventory_tableView" layoutX="6.0" layoutY="21.0" onMouseClicked="#inventorySelectData" prefHeight="327.0" prefWidth="803.0" AnchorPane.topAnchor="10.0">
+                    <columns>
+                      <TableColumn fx:id="inventory_col_itemID" prefWidth="182.0" text="Item ID" />
+                      <TableColumn fx:id="inventory_col_itemName" prefWidth="421.0" text="Item Name" />
+                        <TableColumn fx:id="inventory_col_itemQuantity" minWidth="0.0" prefWidth="116.0" text="Quantity" />
+                        <TableColumn fx:id="inventory_col_itemStatus" minWidth="0.0" prefWidth="200.0" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <AnchorPane fx:id="inventoryBtnPane" layoutX="10.0" layoutY="305.0" prefHeight="181.0" prefWidth="793.0" styleClass="white-bg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="351.0">
+                     <children>
+                        <TextField fx:id="inventory_itemID" layoutX="91.0" layoutY="14.0" prefHeight="30.0" prefWidth="79.0" promptText="item001">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="inventory_itemName" layoutX="301.0" layoutY="14.0" prefHeight="30.0" prefWidth="220.0" promptText="Arduino UNO R3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="24.0" layoutY="16.0" text="Item ID :">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="16.0" text="Item Name :">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="inventory_itemQuantity" layoutX="91.0" layoutY="63.0" prefHeight="30.0" prefWidth="79.0" promptText="0" AnchorPane.bottomAnchor="88.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="16.0" layoutY="68.0" text="Quantity :" AnchorPane.bottomAnchor="92.0">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="242.0" layoutY="68.0" text="Status :" AnchorPane.bottomAnchor="92.0">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="inventory_itemStatus" layoutX="300.0" layoutY="68.0" prefHeight="25.0" prefWidth="153.0" promptText="Choose Status" AnchorPane.bottomAnchor="88.0" />
+                        <AnchorPane layoutX="630.0" layoutY="15.0" prefHeight="120.0" prefWidth="120.0" styleClass="white-bg">
+                           <children>
+                              <ImageView fx:id="inventory_imageView" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="inventory_importBtn" layoutX="642.0" layoutY="142.0" mnemonicParsing="false" onAction="#doImportInventoryTable" prefHeight="30.0" prefWidth="100.0" styleClass="btn" text="Import" />
+                        <Button fx:id="inventory_deleteBtn" layoutX="369.0" layoutY="121.0" mnemonicParsing="false" onAction="#doDeleteInventoryTable" prefHeight="30.0" prefWidth="70.0" styleClass="reject-btn" stylesheets="@../homeDesign.css" text="DELETE" AnchorPane.bottomAnchor="30.0" />
+                        <Button fx:id="inventory_clearBtn" layoutX="258.0" layoutY="121.0" mnemonicParsing="false" onAction="#doClearInventoryTable" prefHeight="30.0" prefWidth="70.0" styleClass="warning-btn" stylesheets="@../homeDesign.css" text="CLEAR" AnchorPane.bottomAnchor="30.0" />
+                        <Button fx:id="inventory_updateBtn" layoutX="147.0" layoutY="121.0" mnemonicParsing="false" onAction="#doUpdateInventoryTable" prefHeight="30.0" prefWidth="70.0" styleClass="btn" text="UPDATE" AnchorPane.bottomAnchor="30.0" />
+                        <Button fx:id="inventory_insertBtn" layoutX="35.0" layoutY="120.0" mnemonicParsing="false" onAction="#doInsertInventoryTable" prefHeight="30.0" prefWidth="70.0" styleClass="btn" text="INSERT" AnchorPane.bottomAnchor="30.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="request_form" layoutX="431.0" layoutY="192.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="44.0">
+               <children>
+                  <AnchorPane fx:id="tchRequestList" layoutX="14.0" layoutY="14.0" prefHeight="185.0" prefWidth="813.0" styleClass="white-bg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="367.0" layoutY="4.0" text="Request List">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="req1_approveBtn" layoutX="698.0" layoutY="90.0" mnemonicParsing="false" onAction="#req1_doApprove" prefHeight="30.0" prefWidth="100.0" styleClass="btn" text="Approve" />
+                        <Button layoutX="699.0" layoutY="141.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" styleClass="reject-btn" text="Decline" textFill="#04800c" />
+                        <TableView fx:id="table_requestListView" layoutX="3.0" layoutY="30.0" onMouseClicked="#reqSelectData1" prefHeight="150.0" prefWidth="663.0">
+                          <columns>
+                            <TableColumn fx:id="req_col_studentID" prefWidth="99.0" text="Student ID" />
+                            <TableColumn fx:id="req_col_studentName" prefWidth="279.0" text="Student Name" />
+                              <TableColumn fx:id="req_col_Dept" prefWidth="101.0" text="Department" />
+                              <TableColumn fx:id="req_col_Session" prefWidth="106.0" text="Session" />
+                              <TableColumn fx:id="req_col_requestNo" prefWidth="75.0" text="Request No" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="698.0" layoutY="40.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" styleClass="report-btn" stylesheets="@../homeDesign.css" text="View Report" textFill="#035975" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="insAssignDate" layoutY="197.0" prefHeight="351.0" prefWidth="813.0" styleClass="white-bg" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="343.0" layoutY="4.0" text="Assign Return Date">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table_requestListView2" layoutX="3.0" layoutY="32.0" onMouseClicked="#reqSelectData2" prefHeight="150.0" prefWidth="663.0">
+                           <columns>
+                              <TableColumn fx:id="req2_col_studentID" prefWidth="101.0" text="Student ID" />
+                              <TableColumn fx:id="req2_col_studentName" prefWidth="260.0" text="Student Name" />
+                              <TableColumn fx:id="req2_col_requestNo" prefWidth="148.0" text="Request No" />
+                              <TableColumn fx:id="req2_col_approveStatus" prefWidth="152.0" text="Approved Status" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="req2_assignBtn" layoutX="673.0" layoutY="146.0" mnemonicParsing="false" onAction="#req2_doAssignDate" prefHeight="30.0" prefWidth="127.0" styleClass="btn" text="Assign" />
+                        <DatePicker fx:id="returnDatePicker" layoutX="673.0" layoutY="107.0" onAction="#req2_returnDate" prefHeight="30.0" prefWidth="127.0" promptText="Select a date" />
+                        <TableView fx:id="table_requestListView3" layoutX="3.0" layoutY="216.0" prefHeight="135.0" prefWidth="719.0">
+                           <columns>
+                              <TableColumn fx:id="req3_col_studentID" prefWidth="101.0" text="Student ID" />
+                              <TableColumn fx:id="req3_col_studentName" prefWidth="248.0" text="Student Name" />
+                              <TableColumn fx:id="req3_col_requestNo" prefWidth="102.0" text="Request No" />
+                              <TableColumn fx:id="req3_col_approveStatus" prefWidth="121.0" text="Approval Status" />
+                              <TableColumn fx:id="req3_col_returnDate" prefWidth="145.0" text="Return Date" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="364.0" layoutY="186.0" text="Details Table">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="676.0" layoutY="34.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" styleClass="report-btn" stylesheets="@../homeDesign.css" text="View Report" textFill="#035975" />
+                        <Button layoutX="731.0" layoutY="269.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" styleClass="report-btn" stylesheets="@../homeDesign.css" text="Report" textFill="#035975" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="item_form" layoutX="181.0" layoutY="44.0" prefHeight="546.0" prefWidth="813.0" styleClass="white-bg" stylesheets="@../homeDesign.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="44.0">
+               <children>
+                  <AnchorPane fx:id="menu_form" layoutY="9.0" prefHeight="537.0" prefWidth="507.0" styleClass="white-bg" AnchorPane.rightAnchor="300.0">
+                     <children>
+                        <ScrollPane fx:id="menu_scrollPane" layoutX="6.0" layoutY="5.0" prefHeight="465.0" prefWidth="497.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <content>
+                              <GridPane fx:id="menu_gridPane" prefHeight="32.0" prefWidth="100.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <Label layoutX="2.0" layoutY="508.0" prefHeight="21.0" prefWidth="56.0" text="Result :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="result_messageBox" layoutX="54.0" layoutY="503.0" prefHeight="30.0" prefWidth="439.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Line endX="390.0" layoutX="101.0" layoutY="488.0" startX="-100.0" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="menu_submitBtn" layoutX="546.0" layoutY="368.0" mnemonicParsing="false" onAction="#menu_submitList" prefHeight="32.0" prefWidth="240.0" styleClass="btn" stylesheets="@../homeDesign.css" text="Submit" />
+                  <Button fx:id="menu_removeBtn" layoutX="560.0" layoutY="431.0" mnemonicParsing="false" onAction="#menu_removeList" prefHeight="32.0" prefWidth="90.0" styleClass="reject-btn" text="Remove" />
+                  <Button fx:id="menu_reportBtn" layoutX="683.0" layoutY="432.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="90.0" styleClass="report-btn" text="Report" />
+                  <TableView fx:id="menu_tableView" layoutX="522.0" layoutY="10.0" onMouseClicked="#menuSelectData" prefHeight="341.0" prefWidth="287.0">
+                    <columns>
+                      <TableColumn fx:id="menu_col_itemID" prefWidth="62.0" text="Item ID" />
+                      <TableColumn fx:id="menu_col_InstrumentName" prefWidth="157.0" text="Instrument Name" />
+                        <TableColumn fx:id="menu_col_quantity" prefWidth="66.0" text="Quantity" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
